@@ -13,6 +13,21 @@
   }
 }
 
+.main_block {
+  border: white solid 2px;
+}
+
+.sub1 {
+  border: white solid 2px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.all_white {
+  color: white;
+  border: white solid 2px;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
