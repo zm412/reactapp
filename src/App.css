@@ -1,3 +1,17 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600&subset=latin,cyrillic);
+
+@media (max-width: 991px) {
+  .sub1 {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 992px) {
+  .sub1 {
+    padding: 40px;
+  }
+}
+
 .App {
   text-align: center;
 }
@@ -15,12 +29,25 @@
 
 .main_block {
   border: white solid 2px;
+  padding: 10px;
+}
+
+.display_none {
+  display: none;
+}
+
+.list_b {
+  overflow-y: scroll;
 }
 
 .sub1 {
+  height: 80vh;
   border: white solid 2px;
   margin: 10px;
-  padding: 10px;
+}
+
+.buttom_style {
+  vertical-align: bottom;
 }
 
 .all_white {

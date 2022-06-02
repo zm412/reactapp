@@ -1,27 +1,14 @@
 import { makeAutoObservable, observable, action } from "mobx";
 
-export default class Library {
+export default class smallData {
   tree = null;
-  static data = null;
+  data = null;
 
   constructor() {
+    this.get_library();
     makeAutoObservable(this, {
       data: observable,
-      removeElement: action,
     });
-    if (this.data) {
-      return this.data;
-    } else {
-      this.get_library();
-    }
-  }
-
-  removeElement(id) {
-    console.log(id, "id");
-    let filteredArr = this.data.filter((n) => n.id !== id);
-    console.log(filteredArr, "arr");
-    this.data = filteredArr;
-    console.log(this.data, "thisdata");
   }
 
   getNodes(obj) {

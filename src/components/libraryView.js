@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 const LibraryView = observer(({ lib, getDetalesFunc, detales }) => {
   const [nodeInfo, setNodeInfo] = useState(null);
+  console.log(lib, "lib3");
 
   let tree = lib.tree ? lib.tree : [];
   let data = lib.data ? lib.data : [];
@@ -14,17 +15,29 @@ const LibraryView = observer(({ lib, getDetalesFunc, detales }) => {
     getDetalesFunc(temp);
     setNodeInfo(temp);
   };
+
   const createList = (arr) => {
     let result = arr.map((node, i) => {
+      let none_displ_class = node.parentId != -1 ? "display_none" : "";
       if (!node.children) {
         return (
-          <li key={i} onClick={clickNode} data-key={node.id}>
+          <li
+            key={i}
+            onClick={clickNode}
+            className={"def-mark"}
+            data-key={node.id}
+          >
             {node.label}
           </li>
         );
       } else {
         return (
-          <li data-key={node.id} onClick={clickNode} key={i}>
+          <li
+            data-key={node.id}
+            className={"def-mark "}
+            onClick={clickNode}
+            key={i}
+          >
             {node.label}
             <ol>{createList(node.children)}</ol>
           </li>

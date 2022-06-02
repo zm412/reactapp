@@ -3,11 +3,23 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
+import { Provider } from "mobx-react";
+import Data_store from "./stores/data_store.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
+const stores = {
+  Data_store,
+  //ButtonStore : mainStore.ButtonStore,
+  //FioStore : mainStore.FioStore,
+  //EmailStore : mainStore.EmailStore
+};
+
 root.render(
   <React.StrictMode>
-    <App />
+    <Provider {...stores}>
+      <App />
+    </Provider>
   </React.StrictMode>
 );
 
